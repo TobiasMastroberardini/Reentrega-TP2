@@ -1,0 +1,24 @@
+<?php include_once 'Templates/header.phtml';?>
+<body>
+    <h1>Regristro</h1>
+    <form action="registrar" method="POST" class="mx-5">
+    <label class="form-label">ingrese su nombre</label>
+        <input type="text" class="form-control" name="nombre-registro" require>
+        <label class="form-label">Ingrese su Email</label>
+        <input type="email" class="form-control" name="email-registro" require>
+        <label class="form-label">Ingrese su contraseña</label>
+        <input type="password" class="form-control" name="contraseña-registro" require>
+        <label class="form-label">ingrese su tipo de subscripcion</label>
+        <select name="subscripcion-registro" class="form-control">
+            <option value="1">FAN</option>
+            <option value="2">SUPER FAN</option>
+            <option value="3">MEGA FAN</option>
+            <option value="4">BOSTERO</option>
+            <option value="5">MEGA BOSTERO</option>
+        </select>
+        <button type="submit">registrar</button>
+    </form>
+    <?php if($error):?>
+        <h2><?= $error ?></h2>
+    <?php endif ?>
+    <h2><a href="inicioSesion">volver a inicio</a></h2>

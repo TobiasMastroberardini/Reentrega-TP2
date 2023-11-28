@@ -1,0 +1,36 @@
+<?php include_once 'Templates/header.phtml'; ?>
+<table class='table'>
+<thead>
+<tr>
+      <th scope='col'>NOMBRE</th>
+      <th scope='col'>ROL</th>
+    </tr>
+  </thead>
+<tbody>
+    <?php
+    foreach ($socios as $socio) : ?>
+      <tr>
+        <td> <?php echo $socio->nombre ?></td>
+        <td> <?php if($socio->rol == 1){
+            echo 'ADMINISTRADOR';
+        } else { echo 'SOCIO'; }?></td>
+        <?php if($esAdmin) : ?>
+        <td><form action="eliminarSocio" method="POST">
+        <input type="hidden" name="socio_id" value="<?php echo $socio->ID; ?>">
+        <button type="submit">eliminar</button></form></td>
+        <?php if($socio->rol != 1) : ?>
+        <td><form action="hacerAdmin" method="POST">
+        <input type="hidden" name="socio_id" value="<?php echo $socio->ID; ?>">
+        <button type="submit">hacer administrador</button></form>
+        <?php endif ?>
+        <?php if($socio->rol == 1) : ?>
+        <td><form action="quitarAdmin" method="POST">
+        <input type="hidden" name="socio_id" value="<?php echo $socio->ID; ?>">
+        <button type="submit">quitar administrador</button></form>
+        <?php endif ?>
+        </td>
+        <?php endif ?>
+      </tr>
+    <?php endforeach ?>
+  </tbody>
+</table>

@@ -1,0 +1,19 @@
+<?php include_once 'Templates/header.phtml';?>
+
+<body>
+  <h1>Iniciar Sesion</h1>
+  <form action="iniciar" method="POST" class="mx-5">
+    <div class="mb-3">
+      <label class="form-label">Email</label>
+      <input type="email" class="form-control" name="email">
+    </div>
+    <div class="mb-3">
+      <label class="form-label">contraseña</label>
+      <input type="password" class="form-control" name="contraseña">
+    </div>
+    <?php if ($error) : ?>
+      <h2><?= $error ?></h2>
+    <?php endif ?>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+  <h2><a href="registro">Registrarse</a></h2>
