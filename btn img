@@ -1,0 +1,8 @@
+<div class="aspect-h-3 aspect-w-2 overflow-hidden rounded-lg bg-gray-100 sm:col-span-4 lg:col-span-5" style="position: relative;">
+              <img src="images/<?php echo htmlspecialchars($product->imagen); ?>" alt="<?php echo htmlspecialchars($product->nombre); ?>" class="object-cover object-center">
+              
+              <!-- Botón redondo, pequeño y titilando -->
+              <a href="https://www.otro-sitio.com" class="blink-button absolute inset-0 flex items-center justify-center" style="position: absolute; top: 80%; left: 45%; transform: translate(-50%, -50%);">
+                <span class="sr-only">Ir a otro sitio</span>
+              </a>
+            </div>
